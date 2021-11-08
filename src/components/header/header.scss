@@ -1,0 +1,26 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    .burger-menu {
+        justify-self: start;
+
+        cursor: pointer;
+    }
+
+    .city-name {
+        justify-self: center;
+        font-size: 30px;
+    }
+
+    .search-icon {
+        justify-self: end;
+
+        display: block;
+        width: 30px;
+        height: 30px;
+
+        cursor: pointer;
+    }
+}

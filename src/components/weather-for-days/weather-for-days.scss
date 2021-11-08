@@ -1,0 +1,21 @@
+.weather-for-days-container {
+    box-shadow: 0 0 10px rgba(38, 83, 124, .5);
+    border-radius: 10px;
+
+    display: grid;
+    margin-top: 30px;
+    padding: 15px;
+
+    row-gap: 10px;
+
+    .today,
+    .tomorrow,
+    .day-after-tomorrow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .degrees {
+            justify-self: end;
+        }
+    }
+}
