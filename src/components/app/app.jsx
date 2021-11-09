@@ -1,5 +1,9 @@
 import { Component } from 'react';
 
+// Import data for API access
+import { citiesId, apiKey } from '../../data-for-api.jsx';
+
+// Import of components
 import Header from '../header/header.jsx';
 import WeatherData from '../weather-data/weather-data.jsx';
 import WeatherForDays from '../weather-for-days/weather-for-days.jsx';
@@ -9,46 +13,36 @@ class App extends Component {
     super(props);
     this.state = {
       name: '-',
-      temp: '-',
-      weatherDescription: '-'
+      temp: [],
+      weatherDescription: []
     }
   }
 
   componentDidMount() {
-    const citiesId = {
-      idMinsk: 625144,
-      idMoscow: 524901,
-      idBratislava: 3060972
+    // Takes the passed string, and changes the first letter to uppercase, 
+    // and all other letters to lowercase
+    function capitalizeFirstLetter(item) {
+      return item.charAt(0).toLocaleUpperCase() + item.slice(1).toLocaleLowerCase();
     }
-    const apiKey = "b9f6a12913d4ae40ea76f2c241721480";
 
-    // Today
-    let today = new Date();
-    today = (Date.parse(today) + '').slice(0, 10);
-    console.log('Today: ' + today);
-
-    // Tomorrow
-    let tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow = (Date.parse(tomorrow) + '').slice(0, 10);
-    console.log('Tomorrow: ' + tomorrow);
-
-    // Day after tomorrow
-    let dayAfterTomorrow = new Date();
-    dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 2);
-    dayAfterTomorrow = (Date.parse(dayAfterTomorrow) + '').slice(0, 10);
-    console.log('Day after tomorrow: ' + dayAfterTomorrow);
-
-    // weather = 1
-    // forecast = list [40]
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${citiesId.idMinsk}&appid=${apiKey}`)
+    // We receive a forecast for three days by API (by default for the city of "Minsk")
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${citiesId.idMinsk}&appid=${apiKey}&cnt=3`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
+
+        let tempArr = [];
+        let weatherArr = [];
+        for (let i in data.list) {
+          // Converts the transmitted number from Kelvin to Celsius
+          tempArr[i] = Math.round(data.list[i].main.temp - 273.15);
+          weatherArr[i] = capitalizeFirstLetter(data.list[i].weather[0].description);
+        }
+
         this.setState({
-          name: data.name,
-          temp: data.main.temp,
-          weatherDescription: data.weather[0].description
+          name: data.city.name,
+          temp: tempArr,
+          weatherDescription: weatherArr
         });
       });
   }
@@ -62,7 +56,7 @@ class App extends Component {
       <>
         <Header name={name} />
         <WeatherData temp={temp} description={description} />
-        <WeatherForDays />
+        <WeatherForDays temp={temp} description={description} />
       </>
     );
   }

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #679FD2;
+  background: linear-gradient(180deg, rgb(43, 65, 129), rgb(109, 135, 214));
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -29,9 +29,12 @@ code {
 #root {
   width: 100%;
   max-width: 500px;
-  height: 100%;
+  height: 100vh;
+  max-height: 100%;
 
   display: grid;
+  grid-template-rows: 60px auto 1fr;
+
   margin: 0 auto;
   padding: 20px;
 }
