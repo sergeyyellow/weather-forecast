@@ -7,6 +7,7 @@ import { citiesId, apiKey } from '../../data-for-api.jsx';
 import Header from '../header/header.jsx';
 import WeatherData from '../weather-data/weather-data.jsx';
 import WeatherForDays from '../weather-for-days/weather-for-days.jsx';
+// import CitySelectionPopup from '../city-selection-popup/city-selection-popup.jsx';
 
 class App extends Component {
   constructor(props) {
