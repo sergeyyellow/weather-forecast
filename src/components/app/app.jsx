@@ -21,7 +21,9 @@ class App extends Component {
       temp: [],
       weatherDescription: [],
       // Selected default city (by default for the city of "Minsk")
-      idSelectedCity: citiesId.idMinsk
+      // If the user has selected a different city, then after reloading 
+      // the page, thanks to "localStorage", the selected city will remain the same
+      idSelectedCity: localStorage.getItem('idSelectedCity') ? localStorage.getItem('idSelectedCity') : citiesId.idMinsk
     }
   }
 
@@ -30,6 +32,7 @@ class App extends Component {
     this.setState({
       idSelectedCity: value
     });
+    localStorage.setItem('idSelectedCity', value);
   }
 
   // Requesting access to the weather forecast API
