@@ -7,7 +7,6 @@ import { citiesId, apiKey } from '../../data-for-api.jsx';
 import Header from '../header/header.jsx';
 import WeatherData from '../weather-data/weather-data.jsx';
 import WeatherForDays from '../weather-for-days/weather-for-days.jsx';
-// import CitySelectionPopup from '../city-selection-popup/city-selection-popup.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class App extends Component {
         let weatherArr = [];
         for (let i in data.list) {
           // Converts the transmitted number from Kelvin to Celsius
-          tempArr[i] = Math.round(data.list[i].main.temp - 273.15);
+          tempArr[i] = Math.round(data.list[i].main.temp - 273.15) + '';
           weatherArr[i] = capitalizeFirstLetter(data.list[i].weather[0].description);
         }
 
