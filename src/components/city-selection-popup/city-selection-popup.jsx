@@ -1,6 +1,9 @@
+// Import data for API access
+import { citiesId } from '../../data-for-api.jsx';
+
 import './city-selection-popup.scss';
 
-const CitySelectionPopup = ({ active, setActive }) => {
+const CitySelectionPopup = ({ active, setActive, updateIdSelectedCity }) => {
     return (
         <div className={`city-selection-popup ${active ? 'show' : ''}`}
             onClick={() => setActive(false)}>
@@ -9,9 +12,9 @@ const CitySelectionPopup = ({ active, setActive }) => {
             </svg>
 
             <ul className="list-of-cities">
-                <li>Minsk</li>
-                <li>Moscow</li>
-                <li>Bratislava</li>
+                <li onClick={() => updateIdSelectedCity(citiesId.idMinsk)}>Minsk</li>
+                <li onClick={() => updateIdSelectedCity(citiesId.idMoscow)}>Moscow</li>
+                <li onClick={() => updateIdSelectedCity(citiesId.idBratislava)}>Bratislava</li>
             </ul>
         </div>
     );

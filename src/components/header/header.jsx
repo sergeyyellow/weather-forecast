@@ -4,7 +4,7 @@ import CitySelectionPopup from '../city-selection-popup/city-selection-popup.jsx
 
 import './header.scss';
 
-const Header = ({ name }) => {
+const Header = ({ name, updateIdSelectedCity }) => {
     // Declaring a state variable responsible for displaying a pop-up
     const [modalActive, setModalActive] = useState(false);
 
@@ -30,7 +30,7 @@ const Header = ({ name }) => {
                 </svg>
             </header>
 
-            <CitySelectionPopup active={modalActive} setActive={setModalActive} />
+            <CitySelectionPopup active={modalActive} setActive={setModalActive} updateIdSelectedCity={updateIdSelectedCity} />
         </>
     );
 }
