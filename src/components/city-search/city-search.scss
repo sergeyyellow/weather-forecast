@@ -1,0 +1,33 @@
+.city-search-block {
+    margin-top: 20px;
+    position: relative;
+
+    .search-icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        cursor: pointer;
+    }
+
+    .city-search-input {
+        width: 100%;
+        padding: 10px 20px 8px 38px;
+
+        background-color: unset;
+        border: none;
+        outline: none;
+
+        border-bottom: 2px solid white;
+        color: white;
+        font-size: 24px;
+
+        &::placeholder {
+            color: white;
+        }
+    }
+}

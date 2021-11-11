@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
 // Import data for API access
-import { citiesId, apiKey } from '../../../data-for-api.jsx';
+import { citiesId, apiKey } from '../../../data-for-api';
 
 // Import of components
-import Header from '../../header/header.jsx';
-import WeatherData from '../../weather-data/weather-data.jsx';
-import WeatherForDays from '../../weather-for-days/weather-for-days.jsx';
+import Header from '../../header/header';
+import WeatherData from '../../weather-data/weather-data';
+import WeatherForDays from '../../weather-for-days/weather-for-days';
 
 import './home.scss';
 
@@ -49,6 +49,8 @@ class Home extends Component {
         fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${this.state.idSelectedCity}&appid=${apiKey}&cnt=3`)
             .then(res => res.json())
             .then(data => {
+                console.log(data);
+
                 let tempArr = [];
                 let weatherArr = [];
 

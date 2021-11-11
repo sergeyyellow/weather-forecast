@@ -1,0 +1,10 @@
+.weather-for-days-one-value {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 20px;
+
+    .degrees {
+        justify-self: end;
+        align-self: center;
+    }
+}

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-
-import CitySelectionPopup from '../city-selection-popup/city-selection-popup.jsx';
 import { Link } from 'react-router-dom';
+
+import CityName from '../city-name/city-name';
+import CitySelectionPopup from '../city-selection-popup/city-selection-popup';
 
 import './header.scss';
 
@@ -28,7 +29,7 @@ const Header = ({ name, updateIdSelectedCity }) => {
                         d="M2 12L22 12M2 6L22 6M2 18L22 18" />
                 </svg>
 
-                <p className="city-name">{name}</p>
+                <CityName name={name} />
 
                 <div className="more-details-block"
                     onClick={() => { moreDetailsActive ? setMoreDetailsActive(false) : setMoreDetailsActive(true) }}>

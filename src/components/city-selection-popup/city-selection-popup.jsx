@@ -1,5 +1,5 @@
 // Import data for API access
-import { citiesId } from '../../data-for-api.jsx';
+import { citiesId } from '../../data-for-api';
 
 import './city-selection-popup.scss';
 

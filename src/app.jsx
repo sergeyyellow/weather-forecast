@@ -3,8 +3,8 @@ import { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Web Application Pages
-import Home from './components/pages/home/home.jsx';
-import MoreDetails from './components/pages/more-details/more-details.jsx';
+import Home from './components/pages/home/home';
+import MoreDetails from './components/pages/more-details/more-details';
 
 class App extends Component {
   render() {

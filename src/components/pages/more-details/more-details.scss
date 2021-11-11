@@ -1,4 +1,7 @@
 .more-details-block {
     display: grid;
-    // grid-template-rows: auto auto 1fr;
+    
+    .city-name {
+        margin-top: 20px;
+    }
 }

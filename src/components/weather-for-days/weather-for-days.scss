@@ -9,17 +9,4 @@
 
     row-gap: 10px;
     height: max-content;
-
-    .today,
-    .tomorrow,
-    .day-after-tomorrow {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        column-gap: 20px;
-
-        .degrees {
-            justify-self: end;
-            align-self: center;
-        }
-    }
 }
