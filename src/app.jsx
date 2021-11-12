@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 // The "react-router" library is needed for routing between web application pages
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

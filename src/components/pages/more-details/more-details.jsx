@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { citiesId, loadingDataFromServer } from '../../../data-for-api';
 
@@ -6,6 +7,7 @@ import CitySearch from '../../city-search/city-search';
 import CityName from '../../city-name/city-name';
 import WeatherData from '../../weather-data/weather-data';
 import WeatherForDays from '../../weather-for-days/weather-for-days';
+import HourlyWeatherForecast from '../../hourly-weather-forecast/hourly-weather-forecast';
 
 import './more-details.scss';
 
@@ -29,12 +31,12 @@ class MoreDetails extends Component {
     }
 
     // Updating basic weather information
-    updateBasicWeatherInformation = (name1, temp1, weatherDescription1, dt1) => {
+    updateBasicWeatherInformation = (newName, newTemp, newWeatherDescription, newDt) => {
         this.setState({
-            name: name1,
-            temp: temp1,
-            weatherDescription: weatherDescription1,
-            dt: dt1
+            name: newName,
+            temp: newTemp,
+            weatherDescription: newWeatherDescription,
+            dt: newDt
         });
     }
 
@@ -52,11 +54,14 @@ class MoreDetails extends Component {
         const date = this.state.dt;
 
         return (
-            <div className="more-details-block" >
+            <div className="more-details-container">
                 <CitySearch />
                 <CityName name={name} />
                 <WeatherData temp={temp} description={description} />
                 <WeatherForDays temp={temp} description={description} date={date} numberOfDays={numberOfDays} />
+                <HourlyWeatherForecast idSelectedCity={this.state.idSelectedCity} />
+                
+                <Link to="/" className="come-back">← Come back</Link>
             </div>
         );
     }

@@ -1,5 +1,4 @@
 .city-selection-popup {
-    // display: none;
     width: 100%;
     height: 100%;
 
@@ -16,7 +15,6 @@
     transition: .2s;
 
     &.show {
-        // display: block;
         pointer-events: unset;
         opacity: 1;
     }

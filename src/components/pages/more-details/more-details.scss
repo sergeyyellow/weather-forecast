@@ -1,7 +1,17 @@
-.more-details-block {
+.more-details-container {
     display: grid;
-    
+    grid-template-columns: 500px;
+
+    padding-bottom: 40px;
+
     .city-name {
         margin-top: 20px;
+    }
+
+    .come-back {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 15px;
     }
 }

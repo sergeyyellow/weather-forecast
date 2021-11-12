@@ -37,16 +37,17 @@ class Home extends Component {
         this.setState({
             idSelectedCity: value
         });
+
         localStorage.setItem('idSelectedCity', value);
     }
 
     // Updating basic weather information
-    updateBasicWeatherInformation = (name1, temp1, weatherDescription1, dt1) => {
+    updateBasicWeatherInformation = (newName, newTemp, newWeatherDescription, newDt) => {
         this.setState({
-            name: name1,
-            temp: temp1,
-            weatherDescription: weatherDescription1,
-            dt: dt1
+            name: newName,
+            temp: newTemp,
+            weatherDescription: newWeatherDescription,
+            dt: newDt
         });
     }
 
@@ -57,6 +58,8 @@ class Home extends Component {
     }
 
     componentDidUpdate() {
+        // If the new ID of the selected city differs from the previous saved ID, 
+        // then a new API request will be executed using the new ID
         if (this.#prevIdSelectedCity !== this.state.idSelectedCity) {
             loadingDataFromServer(this.state.idSelectedCity, this.updateBasicWeatherInformation);
             this.#prevIdSelectedCity = this.state.idSelectedCity;

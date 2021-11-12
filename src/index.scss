@@ -8,6 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
 }
 
 code {
@@ -35,11 +37,7 @@ a {
 #root {
   width: 100%;
   max-width: 500px;
-  height: 100vh;
-  max-height: 100%;
 
-  // display: grid;
-  // grid-template-rows: auto auto 1fr;
-
+  height: 100%;
   margin: 0 auto;
 }

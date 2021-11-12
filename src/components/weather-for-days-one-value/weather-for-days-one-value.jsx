@@ -1,7 +1,7 @@
 import './weather-for-days-one-value.scss';
 
 const WeatherForDaysOneValue = ({ temp, description, date, i }) => {
-    const arr = ['Today', 'Tommorow', 'Day after tomorrow'];
+    const arr = ['Today', 'Tomorrow', 'Day after tomorrow'];
     const daysArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     let text;
