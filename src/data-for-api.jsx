@@ -20,7 +20,6 @@ export const loadingDataFromServer = (id, updateWeatherInformation) => {
     fetch(`http://api.openweathermap.org/data/2.5/forecast/?id=${id}&appid=${apiKey}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             // The filter writes to the variable only the data that is oriented towards the time 18:00:00. 
             // There will be 5 total values because the API provides for free only up to 5 days of an open forecast.
             const dailyData = data.list.filter(item => item.dt_txt.includes("18:00:00"));
