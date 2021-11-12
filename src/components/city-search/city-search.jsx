@@ -14,11 +14,13 @@ const CitySearch = () => {
                 <path fill="#ffffff"
                     stroke="#ffffff"
                     strokeMiterlimit="10"
-                    strokeWidth="6" 
+                    strokeWidth="6"
                     d="M31.2 31.2L44.5 44.5" />
             </svg>
 
-            <input className="city-search-input" type="text" placeholder="Enter the name of the city..." />
+            <input className="city-search-input"
+                type="text"
+                placeholder="Enter the name of the city..." />
         </div>
     );
 };
